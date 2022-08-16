@@ -1,6 +1,6 @@
 package com.dius;
 
-public class BowlingGame {
+public class BowlingGame implements BolwingGameInterface {
 	
 	private static final int MAX_ROLLS = 21;
 	

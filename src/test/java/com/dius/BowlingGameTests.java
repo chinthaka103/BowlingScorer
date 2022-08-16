@@ -15,7 +15,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenNoPoints() {
+	public void testWhenNoPointsInAGame() {
 		try {
 			fillGames(21, 0);
 		} catch (Exception e) {
@@ -25,7 +25,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenAllOnePoints() {
+	public void testWhenAllOnePointsInAGame() {
 		try {
 			fillGames(21, 1);
 		} catch (Exception e) {
@@ -35,7 +35,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenFailToKnockDownPinsInAGame() {
+	public void testWhenFailToKnockDownPinsInAFrame() {
 		
 		try {
 			bowlingGame.roll(4);
@@ -48,7 +48,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenSpareGame() {
+	public void testWhenSpareFrame() {
 		try {
 			bowlingGame.roll(4);
 			bowlingGame.roll(6);
@@ -61,7 +61,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenStrikeGame() {
+	public void testWhenStrikeFrame() {
 		try {
 			bowlingGame.roll(10);
 			bowlingGame.roll(5);
@@ -74,7 +74,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test
-	public void testWhenAllStrikeGames() {
+	public void testWhenAllStrikeFrames() {
 		try {
 			fillGames(12, 10);
 		} catch (Exception e) {
@@ -84,7 +84,7 @@ public class BowlingGameTests {
 	}
 	
 	@Test(expected = Exception.class)
-	public void testWhenExceedRolls() throws Exception {
+	public void testWhenExceedRollsInAGame() throws Exception {
 		fillGames(22, 1);
 		assertEquals(22, bowlingGame.score());
 	}
